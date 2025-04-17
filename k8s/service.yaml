@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: app-java-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: app-java
   ports:
     - protocol: TCP
       port: 80        # Porta externa
       targetPort: 8080  # Porta do container/pod
+      nodePort: 30080   # você pode definir ou deixar o Kubernetes escolher
