@@ -14,9 +14,11 @@ spec:
       labels:
         app: app-java
     spec:
+      imagePullSecrets:
+        - name: regcred
       containers:
         - name: app-java
-          image: <aws_account_id>.dkr.ecr.<região>.amazonaws.com/<nome-do-repo>:<tag>
+          image: <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository>:<tag>
           ports:
             - containerPort: 8080
           resources:
